@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!--sidebar-->
+    <input type="checkbox" id="check">
+    <div class="sidebar">
+        <ul>
+            <li><a href="">About</a></li>
+            <li><a href="">kategori</a></li>
+            <li><a href="">smartphone</a></li>
+            <li><a href="">pc/console</a></li>
+        </ul>
+    </div>
+
+    <header>
+        <!--header-->
+        <div class="container">
+            <h1><a href="">GameInfo</a></h1>
+            <ul>
+                <li><a href="">About</a></li>
+                <li><a href="">Jenis</a></li>
+                <li><a href="">Smartphone</a></li>
+                <li><a href="">Pc/Console</a></li>
+            </ul>
+            
+            <!--mobilemenu-->
+            <label for="check" class="mobile-menu"><i class="fa-solid fa-bars-staggered fa-2x"></i></label>
+        </div>
+    </header>
+
+    <!--banner-->
+    <section class="banner">
+        <div class="container-fluid">
+            <img src="img/banner.jpg">
+            <h2 class="container mt-5">Hai...<br>
+                mari kita bahas tentang dunia game yang sangat luas dan menarik ini, <br>
+                tentukan jenis game yang anda sukai,<br>
+                ><span class="efek-ngetik"></span><</h2>
+                <p class="container">selamat datang para player</p>
+        </div>
+    </section>
+
+    <!--about-->
+    <section id="about">
+        <div class="container">
+            <h3>About Game</h3>
+            <p>Page kami membahas tentang dunia permainan digital yang sekarang sudah menjadi pengganti permainan offline.
+                Banyak game yang tersedia saat ini, mulai dari game console, pc, ataupun pada smarthphone. 
+                Banyak juga jenis permainan yang dapat kita mainkan, kita dapat memainkannya sesuai selera dan kemampuan device kita.
+                Pengertian game jika diartikan secara bahasa (berasal dari bahasa Inggris) adalah permainan. 
+                Dengan bantuan teknologi, kini game dapat diartikan secara lebih luas lagi. 
+                Jadi, secara istilah pengertian game adalah permainan yang diprogram pada suatu perangkat yang dapat dijalankan
+                secara offline maupun online.</p>
+                <p>Berdasarkan cara bermainnya, game dapat dijalankan pada perangkat yang tidak terhubung ke internet (offline) 
+                    dan harus terhubung ke internet (online) untuk dapat mengakses suatu server yang terpusat. 
+                    Oleh karena itu, pengguna tidak dapat bermain game online apabila perangkatnya tidak terhubung ke internet.
+                    Game offline dan online tersebut juga punya beberapa jenis kategori yang cara memainkannya berbeda-beda.</p>
+        </div>
+    </section>
+
+    <!--kategori-->
+    <section id="jenis">
+        <div class="container">
+            <h3>Jenis Game</h3>
+            <h4>PC Games</h4>
+            <div class="bar">
+                <span class="nilai pc">30%</span>
+            </div>
+
+            <h4>Console Games</h4>
+            <div class="bar">
+                <span class="nilai console">20%</span>
+            </div>
+
+            <h4>Mobile Games</h4>
+            <div class="bar">
+                <span class="nilai mobile">35%</span>
+            </div>
+
+            <h4>Handheld Games</h4>
+            <div class="bar">
+                <span class="nilai handheld">15%</span>
+            </div>
+        </div>
+    </section>
+
+    <div>
+        <h3>Game yang sedang ramai :</h3>
+    </div>
+
+    <section id="slide">
+        <div class="container">
+            <div class="contentslide">
+                <div class="imgslide fade">
+                    <div class="numberslide">1 / 4</div>
+                    <img src="img/br.jpg" alt="">
+                    <div class="text">Battle Royale</div>
+                </div>
+
+                <div class="imgslide fade">
+                    <div class="numberslide">2 / 4</div>
+                    <img src="img/moba.jpg" alt="">
+                    <div class="text">Moba</div>
+                </div>
+
+                <div class="imgslide fade">
+                    <div class="numberslide">3 / 4</div>
+                    <img src="img/avt.jpg" alt="">
+                    <div class="text">Advanture</div>
+                </div>
+
+                <div class="imgslide fade">
+                    <div class="numberslide">4 / 4</div>
+                    <img src="img/rpg.jpg" alt="">
+                    <div class="text">RPG</div>
+                </div>
+
+                <a class="prev"
+                onClick="nextslide(-1)">&#10094;</a>
+                <a class="next" 
+                onClick="nextslide(1)">&#10095;</a>
+            </div>
+            
+            <div class="page">
+                <span class="dot" onClick="dotslide (1)"></span>
+                <span class="dot" onClick="dotslide (2)"></span>
+                <span class="dot" onClick="dotslide (3)"></span>
+                <span class="dot" onClick="dotslide (4)"></span>
+            </div>
+        </div>
+        
+        <script>
+            var slideIndex = 1;
+                showSlide(slideIndex);
+            
+            function nextslide (n){
+                showSlide(slideIndex = n);
+            }
+
+            function dotslide(n){
+                showSlide(slideIndex = n);
+            }
+
+            function showSlide(n){
+                var i;
+                var slides = document.getElementsByClassName("imgslide");
+                var dot = document.getElementsByClassName("dot");
+
+                if (n > slides.length){
+                    slideIndex = 1
+                }
+
+                if (n < 1){
+                    slideIndex = slides.length;
+                }
+
+                for (i = 0; i < slides.length; i++){
+                    slides[i].style.display = "none";
+                }
+
+                for (i = 0; i < slides.length; i++){
+                    dot[i].className = dot[i].className.replace(" active", "");
+                }
+                
+                slides[slideIndex - 1].style.display = "block";
+
+                dot[slideIndex - 1].className += " active";
+
+            }
+        </script>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
